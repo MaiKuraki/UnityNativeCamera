@@ -23,6 +23,7 @@ public class NativeCamera
 	public static boolean QuickCapture = true; // true: the Confirm/Delete screen after the capture is skipped
 	public static boolean UseDefaultCameraApp = true; // false: Intent.createChooser is used to pick the camera app
 	public static boolean PermissionFreeMode = false; // true: Permissions for reading/writing media elements won't be requested. It might cause undesired side effects like a copy of the captured image/video being saved to Gallery or the captured image having a very low resolution
+	public static int IOBufferSize = 262144; // 256 KB by default
 
 	public static boolean HasCamera( Context context )
 	{

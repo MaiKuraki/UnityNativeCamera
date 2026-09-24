@@ -217,7 +217,7 @@ public class NativeCameraUtils
 				OutputStream out = new FileOutputStream( dst );
 				try
 				{
-					byte[] buf = new byte[1024];
+					byte[] buf = new byte[NativeCamera.IOBufferSize];
 					int len;
 					while( ( len = in.read( buf ) ) > 0 )
 						out.write( buf, 0, len );
@@ -250,7 +250,7 @@ public class NativeCameraUtils
 					{
 						output = new FileOutputStream( dst, false );
 
-						byte[] buf = new byte[4096];
+						byte[] buf = new byte[NativeCamera.IOBufferSize];
 						int len;
 						while( ( len = input.read( buf ) ) > 0 )
 							output.write( buf, 0, len );
@@ -390,7 +390,7 @@ public class NativeCameraUtils
 			{
 				output = new FileOutputStream( tempFile, false );
 
-				byte[] buf = new byte[4096];
+				byte[] buf = new byte[NativeCamera.IOBufferSize];
 				int len;
 				while( ( len = input.read( buf ) ) > 0 )
 				{
